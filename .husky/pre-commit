@@ -1,13 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Load environment variables from .env files
-if [ -f .env ]; then
-  set -a
-  . .env
-  set +a
-fi
-
 pnpm lint-staged
 
 # Run Lingo.dev i18n workflow if LINGODOTDEV_API_KEY is set
