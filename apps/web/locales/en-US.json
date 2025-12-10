@@ -76,7 +76,7 @@
       "please_verify_captcha": "Please verify reCAPTCHA",
       "privacy_policy": "Privacy Policy",
       "terms_of_service": "Terms of Service",
-      "title": "Create your Formbricks account"
+      "title": "Create your account"
     },
     "signup_without_verification_success": {
       "user_successfully_created": "User successfully created",
@@ -100,7 +100,7 @@
   },
   "billing_confirmation": {
     "back_to_billing_overview": "Back to billing overview",
-    "thanks_for_upgrading": "Thanks a lot for upgrading your Formbricks subscription.",
+    "thanks_for_upgrading": "Thanks a lot for upgrading your subscription.",
     "upgrade_successful": "Upgrade successful"
   },
   "c": {
@@ -2028,10 +2028,10 @@
     "intro": {
       "get_started": "Get started",
       "made_with_love_in_kiel": "Made with \uD83E\uDD0D in Germany",
-      "paragraph_1": "Formbricks is an Experience Management Suite built of the <b>fastest growing open source survey platform</b> worldwide.",
+      "paragraph_1": "<b>Survey-Monkey Pro</b> is an Experience Management Suite built of the <b>fastest growing open source survey platform</b> worldwide.",
       "paragraph_2": "Run targeted surveys on websites, in apps or anywhere online. Gather valuable insights to <b>craft irresistible experiences</b> for customers, users and employees.",
       "paragraph_3": "We're commited to highest degree of data privacy. Self-host to keep <b>full control over your data</b>.",
-      "welcome_to_formbricks": "Welcome to Formbricks!"
+      "welcome_to": "Welcome to Survey-Monkey Pro!"
     },
     "invite": {
       "add_another_member": "Add another member",

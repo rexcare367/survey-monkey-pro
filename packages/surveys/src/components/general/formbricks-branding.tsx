@@ -12,7 +12,7 @@ export function FormbricksBranding() {
         <p className="fb-text-signature fb-text-xs">
           {t("common.powered_by")}{" "}
           <b>
-            <span className="fb-text-branding-text hover:fb-text-signature">Formbricks</span>
+            <span className="fb-text-branding-text hover:fb-text-signature">Yehor</span>
           </b>
         </p>
       </a>

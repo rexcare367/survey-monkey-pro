@@ -380,7 +380,7 @@ export const PreviewSurvey = ({
                   <SurveyInline
                     isPreviewMode={true}
                     survey={{ ...survey, type: "link" }}
-                    isBrandingEnabled={project.linkSurveyBranding}
+                    isBrandingEnabled={true} // yehor-edit
                     isRedirectDisabled={true}
                     languageCode={languageCode}
                     responseCount={42}
