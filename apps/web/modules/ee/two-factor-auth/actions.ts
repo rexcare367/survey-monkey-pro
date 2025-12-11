@@ -1,11 +1,11 @@
 "use server";
 
 import { z } from "zod";
-import { OperationNotAllowedError } from "@formbricks/types/errors";
+// import { OperationNotAllowedError } from "@formbricks/types/errors";
 import { authenticatedActionClient } from "@/lib/utils/action-client";
 import { AuthenticatedActionClientCtx } from "@/lib/utils/action-client/types/context";
 import { withAuditLogging } from "@/modules/ee/audit-logs/lib/handler";
-import { getIsTwoFactorAuthEnabled } from "@/modules/ee/license-check/lib/utils";
+// import { getIsTwoFactorAuthEnabled } from "@/modules/ee/license-check/lib/utils";
 import { disableTwoFactorAuth, enableTwoFactorAuth, setupTwoFactorAuth } from "./lib/two-factor-auth";
 
 const ZSetupTwoFactorAuthAction = z.object({
@@ -17,10 +17,10 @@ export const setupTwoFactorAuthAction = authenticatedActionClient.schema(ZSetupT
     "updated",
     "twoFactorAuth",
     async ({ ctx, parsedInput }: { ctx: AuthenticatedActionClientCtx; parsedInput: Record<string, any> }) => {
-      const isTwoFactorAuthEnabled = await getIsTwoFactorAuthEnabled();
-      if (!isTwoFactorAuthEnabled) {
-        throw new OperationNotAllowedError("Two factor auth is not available on your instance");
-      }
+      // const isTwoFactorAuthEnabled = await getIsTwoFactorAuthEnabled();
+      // if (!isTwoFactorAuthEnabled) {
+      //   throw new OperationNotAllowedError("Two factor auth is not available on your instance");
+      // }
       const result = await setupTwoFactorAuth(ctx.user.id, parsedInput.password);
       ctx.auditLoggingCtx.userId = ctx.user.id;
       ctx.auditLoggingCtx.newObject = { twoFactorAuth: "setup" };
@@ -38,10 +38,10 @@ export const enableTwoFactorAuthAction = authenticatedActionClient.schema(ZEnabl
     "updated",
     "twoFactorAuth",
     async ({ ctx, parsedInput }: { ctx: AuthenticatedActionClientCtx; parsedInput: Record<string, any> }) => {
-      const isTwoFactorAuthEnabled = await getIsTwoFactorAuthEnabled();
-      if (!isTwoFactorAuthEnabled) {
-        throw new OperationNotAllowedError("Two factor auth is not available on your instance");
-      }
+      // const isTwoFactorAuthEnabled = await getIsTwoFactorAuthEnabled();
+      // if (!isTwoFactorAuthEnabled) {
+      //   throw new OperationNotAllowedError("Two factor auth is not available on your instance");
+      // }
       const result = await enableTwoFactorAuth(ctx.user.id, parsedInput.code);
       ctx.auditLoggingCtx.userId = ctx.user.id;
       ctx.auditLoggingCtx.newObject = { twoFactorAuth: "enabled" };

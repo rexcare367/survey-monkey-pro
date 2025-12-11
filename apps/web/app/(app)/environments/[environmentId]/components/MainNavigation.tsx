@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  ArrowUpRightIcon,
+  // ArrowUpRightIcon,
   ChevronRightIcon,
   Cog,
   LogOutIcon,
@@ -125,18 +125,18 @@ export const MainNavigation = ({
       href: `/environments/${environment.id}/settings/profile`,
       icon: UserCircleIcon,
     },
-    {
-      label: t("common.documentation"),
-      href: "https://formbricks.com/docs",
-      target: "_blank",
-      icon: ArrowUpRightIcon,
-    },
-    {
-      label: t("common.share_feedback"),
-      href: "https://github.com/formbricks/formbricks/issues",
-      target: "_blank",
-      icon: ArrowUpRightIcon,
-    },
+    // {
+    //   label: t("common.documentation"),
+    //   href: "https://formbricks.com/docs",
+    //   target: "_blank",
+    //   icon: ArrowUpRightIcon,
+    // },
+    // {
+    //   label: t("common.share_feedback"),
+    //   href: "https://github.com/formbricks/formbricks/issues",
+    //   target: "_blank",
+    //   icon: ArrowUpRightIcon,
+    // },
   ];
 
   useEffect(() => {
@@ -273,10 +273,11 @@ export const MainNavigation = ({
                   {dropdownNavigation.map((link) => (
                     <Link
                       href={link.href}
-                      target={link.target}
+                      // target={link.target}
                       className="flex w-full items-center"
                       key={link.label}
-                      rel={link.target === "_blank" ? "noopener noreferrer" : undefined}>
+                      // rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
+                    >
                       <DropdownMenuItem>
                         <link.icon className="mr-2 h-4 w-4" strokeWidth={1.5} />
                         {link.label}

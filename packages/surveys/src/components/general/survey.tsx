@@ -889,8 +889,7 @@ export function Survey({
                 "fb-flex fb-flex-col fb-justify-center fb-gap-2",
                 isCloseButtonVisible || isLanguageSwitchVisible ? "fb-p-2" : "fb-p-3"
               )}>
-              {/* {isBrandingEnabled ? <FormbricksBranding /> : null} yehor-edit*/}
-              <FormbricksBranding />
+              {isBrandingEnabled || 1 ? <FormbricksBranding /> : null}
               {isSpamProtectionEnabled ? <RecaptchaBranding /> : null}
             </div>
           </div>

@@ -53,30 +53,7 @@ const Page = async (props: { params: Promise<{ environmentId: string }> }) => {
             <SettingsCard
               title={t("common.security")}
               description={t("environments.settings.profile.security_description")}>
-              {!isTwoFactorAuthEnabled && !user.twoFactorEnabled ? (
-                <UpgradePrompt
-                  title={t("environments.settings.profile.unlock_two_factor_authentication")}
-                  description={t("environments.settings.profile.two_factor_authentication_description")}
-                  buttons={[
-                    {
-                      text: IS_FORMBRICKS_CLOUD
-                        ? t("common.start_free_trial")
-                        : t("common.request_trial_license"),
-                      href: IS_FORMBRICKS_CLOUD
-                        ? `/environments/${params.environmentId}/settings/billing`
-                        : "https://formbricks.com/upgrade-self-hosting-license",
-                    },
-                    {
-                      text: t("common.learn_more"),
-                      href: IS_FORMBRICKS_CLOUD
-                        ? `/environments/${params.environmentId}/settings/billing`
-                        : "https://formbricks.com/learn-more-self-hosting-license",
-                    },
-                  ]}
-                />
-              ) : (
-                <AccountSecurity user={user} />
-              )}
+              <AccountSecurity user={user} />
             </SettingsCard>
           )}
 
