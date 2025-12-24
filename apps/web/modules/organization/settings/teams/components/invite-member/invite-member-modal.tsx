@@ -21,7 +21,6 @@ interface InviteMemberModalProps {
   setOpen: (v: boolean) => void;
   onSubmit: (data: { name: string; email: string; role: TOrganizationRole }[]) => void;
   teams: TOrganizationTeam[];
-  isAccessControlAllowed: boolean;
   isFormbricksCloud: boolean;
   environmentId: string;
   membershipRole?: TOrganizationRole;
@@ -33,7 +32,6 @@ export const InviteMemberModal = ({
   setOpen,
   onSubmit,
   teams,
-  isAccessControlAllowed,
   isFormbricksCloud,
   environmentId,
   membershipRole,
@@ -49,7 +47,6 @@ export const InviteMemberModal = ({
         setOpen={setOpen}
         environmentId={environmentId}
         onSubmit={onSubmit}
-        isAccessControlAllowed={isAccessControlAllowed}
         isFormbricksCloud={isFormbricksCloud}
         teams={teams}
         membershipRole={membershipRole}
@@ -59,7 +56,6 @@ export const InviteMemberModal = ({
       <BulkInviteTab
         setOpen={setOpen}
         onSubmit={onSubmit}
-        isAccessControlAllowed={isAccessControlAllowed}
         isFormbricksCloud={isFormbricksCloud}
         isStorageConfigured={isStorageConfigured}
       />

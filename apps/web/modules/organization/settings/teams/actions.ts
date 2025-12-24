@@ -239,10 +239,6 @@ export const inviteUserAction = authenticatedActionClient.schema(ZInviteUserActi
         throw new OperationNotAllowedError("Managers can only invite users as members");
       }
 
-      if (parsedInput.role !== "owner" || parsedInput.teamIds.length > 0) {
-        await checkRoleManagementPermission(parsedInput.organizationId);
-      }
-
       const inviteId = await inviteUser({
         organizationId: parsedInput.organizationId,
         invitee: {

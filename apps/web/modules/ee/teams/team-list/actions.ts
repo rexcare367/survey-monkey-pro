@@ -37,7 +37,6 @@ export const createTeamAction = authenticatedActionClient.schema(ZCreateTeamActi
           },
         ],
       });
-      await checkRoleManagementPermission(parsedInput.organizationId);
 
       const result = await createTeam(parsedInput.organizationId, parsedInput.name);
       ctx.auditLoggingCtx.organizationId = parsedInput.organizationId;
@@ -75,8 +74,6 @@ export const getTeamDetailsAction = authenticatedActionClient
       ],
     });
 
-    await checkRoleManagementPermission(organizationId);
-
     return await getTeamDetails(parsedInput.teamId);
   });
 
@@ -102,7 +99,6 @@ export const deleteTeamAction = authenticatedActionClient.schema(ZDeleteTeamActi
         ],
       });
 
-      await checkRoleManagementPermission(organizationId);
       ctx.auditLoggingCtx.organizationId = organizationId;
       ctx.auditLoggingCtx.teamId = parsedInput.teamId;
       const oldObject = await getTeamDetails(parsedInput.teamId);
@@ -140,7 +136,6 @@ export const updateTeamDetailsAction = authenticatedActionClient.schema(ZUpdateT
         ],
       });
 
-      await checkRoleManagementPermission(organizationId);
       ctx.auditLoggingCtx.organizationId = organizationId;
       ctx.auditLoggingCtx.teamId = parsedInput.teamId;
       const oldObject = await getTeamDetails(parsedInput.teamId);

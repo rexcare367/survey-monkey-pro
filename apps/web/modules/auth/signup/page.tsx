@@ -12,7 +12,6 @@ import {
   SAML_OAUTH_ENABLED,
   SAML_PRODUCT,
   SAML_TENANT,
-  SIGNUP_ENABLED,
   TERMS_URL,
   TURNSTILE_SITE_KEY,
   WEBAPP_URL,
@@ -39,17 +38,15 @@ export const SignupPage = async ({ searchParams: searchParamsProps }) => {
 
   const samlSsoEnabled = isSamlSsoEnabled && SAML_OAUTH_ENABLED;
   const locale = await findMatchingLocale();
-  if (!SIGNUP_ENABLED || !isMultOrgEnabled) {
-    if (!inviteToken) notFound();
+  if (!inviteToken) notFound();
 
-    try {
-      const { inviteId } = verifyInviteToken(inviteToken);
-      const isValidInviteToken = await getIsValidInviteToken(inviteId);
+  try {
+    const { inviteId } = verifyInviteToken(inviteToken);
+    const isValidInviteToken = await getIsValidInviteToken(inviteId);
 
-      if (!isValidInviteToken) notFound();
-    } catch {
-      notFound();
-    }
+    if (!isValidInviteToken) notFound();
+  } catch {
+    notFound();
   }
 
   const emailFromSearchParams = searchParams["email"];

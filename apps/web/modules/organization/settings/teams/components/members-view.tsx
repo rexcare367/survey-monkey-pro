@@ -45,11 +45,7 @@ export const MembersView = async ({
 
   const isMultiOrgEnabled = await getIsMultiOrgEnabled();
 
-  let teams: TOrganizationTeam[] = [];
-
-  if (isAccessControlAllowed) {
-    teams = (await getTeamsByOrganizationId(organization.id)) ?? [];
-  }
+  let teams: TOrganizationTeam[] = (await getTeamsByOrganizationId(organization.id)) ?? [];
 
   return (
     <SettingsCard
@@ -62,7 +58,6 @@ export const MembersView = async ({
           role={membershipRole}
           isLeaveOrganizationDisabled={isLeaveOrganizationDisabled}
           isInviteDisabled={INVITE_DISABLED}
-          isAccessControlAllowed={isAccessControlAllowed}
           isFormbricksCloud={IS_FORMBRICKS_CLOUD}
           isStorageConfigured={IS_STORAGE_CONFIGURED}
           environmentId={environmentId}

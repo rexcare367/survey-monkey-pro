@@ -27,7 +27,7 @@ import { addMultiLanguageLabels, createI18nString, extractLanguageCodes } from "
 import { structuredClone } from "@/lib/pollyfills/structuredClone";
 import { isConditionGroup } from "@/lib/surveyLogic/utils";
 import { checkForEmptyFallBackValue } from "@/lib/utils/recall";
-import { MultiLanguageCard } from "@/modules/ee/multi-language-surveys/components/multi-language-card";
+// import { MultiLanguageCard } from "@/modules/ee/multi-language-surveys/components/multi-language-card";
 import { AddElementButton } from "@/modules/survey/editor/components/add-element-button";
 import { AddEndingCardButton } from "@/modules/survey/editor/components/add-ending-card-button";
 import { BlocksDroppable } from "@/modules/survey/editor/components/blocks-droppable";
@@ -903,7 +903,7 @@ export const ElementsView = ({
               quotas={quotas}
             />
 
-            <MultiLanguageCard
+            {/* <MultiLanguageCard
               localSurvey={localSurvey}
               projectLanguages={projectLanguages}
               setLocalSurvey={setLocalSurvey}
@@ -913,7 +913,7 @@ export const ElementsView = ({
               isFormbricksCloud={isFormbricksCloud}
               setSelectedLanguageCode={setSelectedLanguageCode}
               locale={locale}
-            />
+            /> */}
           </>
         )}
       </div>

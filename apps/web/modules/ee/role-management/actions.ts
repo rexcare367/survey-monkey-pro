@@ -72,8 +72,6 @@ export const updateInviteAction = authenticatedActionClient.schema(ZUpdateInvite
         throw new OperationNotAllowedError("Managers can only invite members");
       }
 
-      await checkRoleManagementPermission(parsedInput.organizationId);
-
       ctx.auditLoggingCtx.organizationId = parsedInput.organizationId;
       ctx.auditLoggingCtx.inviteId = parsedInput.inviteId;
       ctx.auditLoggingCtx.oldObject = { ...(await getInvite(parsedInput.inviteId)) };
@@ -133,8 +131,6 @@ export const updateMembershipAction = authenticatedActionClient.schema(ZUpdateMe
       if (currentUserMembership.role === "manager" && parsedInput.data.role !== "member") {
         throw new OperationNotAllowedError("Managers can only assign users to the member role");
       }
-
-      await checkRoleManagementPermission(parsedInput.organizationId);
 
       ctx.auditLoggingCtx.organizationId = parsedInput.organizationId;
       ctx.auditLoggingCtx.membershipId = `${parsedInput.userId}-${parsedInput.organizationId}`;

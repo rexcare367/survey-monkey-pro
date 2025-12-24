@@ -23,7 +23,6 @@ import { Button } from "@/modules/ui/components/button";
 import { Uploader } from "@/modules/ui/components/file-input/components/uploader";
 import { showStorageNotConfiguredToast } from "@/modules/ui/components/storage-not-configured-toast/lib/utils";
 import { Muted, P, Small } from "@/modules/ui/components/typography";
-import { ModalButton, UpgradePrompt } from "@/modules/ui/components/upgrade-prompt";
 
 const allowedFileExtensions: TAllowedFileExtension[] = ["jpeg", "png", "jpg", "webp"];
 
@@ -43,7 +42,6 @@ export const EmailCustomizationSettings = ({
   hasWhiteLabelPermission,
   environmentId,
   isReadOnly,
-  isFormbricksCloud,
   user,
   fbLogoUrl,
   isStorageConfigured,
@@ -179,21 +177,6 @@ export const EmailCustomizationSettings = ({
     }
   };
 
-  const buttons: [ModalButton, ModalButton] = [
-    {
-      text: isFormbricksCloud ? t("common.start_free_trial") : t("common.request_trial_license"),
-      href: isFormbricksCloud
-        ? `/environments/${environmentId}/settings/billing`
-        : "https://formbricks.com/upgrade-self-hosting-license",
-    },
-    {
-      text: t("common.learn_more"),
-      href: isFormbricksCloud
-        ? `/environments/${environmentId}/settings/billing`
-        : "https://formbricks.com/learn-more-self-hosting-license",
-    },
-  ];
-
   return (
     <SettingsCard
       className="overflow-hidden pb-0"
@@ -201,107 +184,99 @@ export const EmailCustomizationSettings = ({
       description={t("environments.project.look.email_customization_description")}
       noPadding>
       <div className="px-6 pt-6">
-        {hasWhiteLabelPermission ? (
-          <div className="flex items-end justify-between gap-4">
-            <div className="mb-10">
-              <Small>{t("environments.settings.general.logo_in_email_header")}</Small>
+        <div className="flex items-end justify-between gap-4">
+          <div className="mb-10">
+            <Small>{t("environments.settings.general.logo_in_email_header")}</Small>
 
-              <div className="mb-6 mt-2 flex items-center gap-4">
-                {logoUrl && (
-                  <div className="flex flex-col gap-2">
-                    <div className="flex w-max items-center justify-center rounded-lg border border-slate-200 px-4 py-2">
-                      <Image
-                        src={logoUrl}
-                        alt="Logo"
-                        className="max-h-24 max-w-full object-contain"
-                        width={192}
-                        height={192}
-                      />
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <Button
-                        data-testid="replace-logo-button"
-                        variant="secondary"
-                        onClick={() => {
-                          if (!isStorageConfigured) {
-                            showStorageNotConfiguredToast();
-                            return;
-                          }
-                          inputRef.current?.click();
-                        }}
-                        disabled={isReadOnly || isSaving}>
-                        <RepeatIcon className="h-4 w-4" />
-                        {t("environments.settings.general.replace_logo")}
-                      </Button>
-                      <Button
-                        data-testid="remove-logo-button"
-                        onClick={removeLogo}
-                        variant="outline"
-                        disabled={isReadOnly || isSaving}>
-                        <Trash2Icon className="h-4 w-4" />
-                        {t("environments.settings.general.remove_logo")}
-                      </Button>
-                    </div>
+            <div className="mb-6 mt-2 flex items-center gap-4">
+              {logoUrl && (
+                <div className="flex flex-col gap-2">
+                  <div className="flex w-max items-center justify-center rounded-lg border border-slate-200 px-4 py-2">
+                    <Image
+                      src={logoUrl}
+                      alt="Logo"
+                      className="max-h-24 max-w-full object-contain"
+                      width={192}
+                      height={192}
+                    />
                   </div>
-                )}
-                <Uploader
-                  ref={inputRef}
-                  allowedFileExtensions={allowedFileExtensions}
-                  id="email-customization"
-                  name="email-customization"
-                  handleDragOver={handleDragOver}
-                  uploaderClassName={cn(
-                    "h-20 w-96 border border-slate-200 bg-white",
-                    logoUrl ? "hidden" : "block"
-                  )}
-                  handleDrop={handleDrop}
-                  multiple={false}
-                  handleUpload={onFileInputChange}
-                  disabled={isReadOnly}
-                  isStorageConfigured={isStorageConfigured}
-                />
-              </div>
 
-              <div className="flex gap-4">
-                <Button
-                  data-testid="send-test-email-button"
-                  variant="secondary"
-                  disabled={isReadOnly || isSaving}
-                  onClick={sendTestEmail}>
-                  {t("common.send_test_email")}
-                </Button>
-                <Button onClick={handleSave} disabled={!logoFile || isReadOnly} loading={isSaving}>
-                  {t("common.save")}
-                </Button>
-              </div>
-            </div>
-            <div className="shadow-card-xl min-h-52 w-[446px] rounded-t-lg border border-slate-100 px-10 pb-4 pt-10">
-              <Image
-                data-testid="email-customization-preview-image"
-                src={logoUrl || fbLogoUrl}
-                alt="Logo"
-                className="mx-auto max-h-[100px] max-w-full object-contain"
-                width={192}
-                height={192}
+                  <div className="flex items-center gap-2">
+                    <Button
+                      data-testid="replace-logo-button"
+                      variant="secondary"
+                      onClick={() => {
+                        if (!isStorageConfigured) {
+                          showStorageNotConfiguredToast();
+                          return;
+                        }
+                        inputRef.current?.click();
+                      }}
+                      disabled={isReadOnly || isSaving}>
+                      <RepeatIcon className="h-4 w-4" />
+                      {t("environments.settings.general.replace_logo")}
+                    </Button>
+                    <Button
+                      data-testid="remove-logo-button"
+                      onClick={removeLogo}
+                      variant="outline"
+                      disabled={isReadOnly || isSaving}>
+                      <Trash2Icon className="h-4 w-4" />
+                      {t("environments.settings.general.remove_logo")}
+                    </Button>
+                  </div>
+                </div>
+              )}
+              <Uploader
+                ref={inputRef}
+                allowedFileExtensions={allowedFileExtensions}
+                id="email-customization"
+                name="email-customization"
+                handleDragOver={handleDragOver}
+                uploaderClassName={cn(
+                  "h-20 w-96 border border-slate-200 bg-white",
+                  logoUrl ? "hidden" : "block"
+                )}
+                handleDrop={handleDrop}
+                multiple={false}
+                handleUpload={onFileInputChange}
+                disabled={isReadOnly}
+                isStorageConfigured={isStorageConfigured}
               />
-              <P className="font-bold">
-                {t("environments.settings.general.email_customization_preview_email_heading", {
-                  userName: user?.name,
-                })}
-              </P>
-              <Muted className="text-slate-500">
-                {t("environments.settings.general.email_customization_preview_email_text")}
-              </Muted>
+            </div>
+
+            <div className="flex gap-4">
+              <Button
+                data-testid="send-test-email-button"
+                variant="secondary"
+                disabled={isReadOnly || isSaving}
+                onClick={sendTestEmail}>
+                {t("common.send_test_email")}
+              </Button>
+              <Button onClick={handleSave} disabled={!logoFile || isReadOnly} loading={isSaving}>
+                {t("common.save")}
+              </Button>
             </div>
           </div>
-        ) : (
-          <UpgradePrompt
-            title={t("environments.settings.general.customize_email_with_a_higher_plan")}
-            description={t("environments.settings.general.eliminate_branding_with_whitelabel")}
-            buttons={buttons}
-          />
-        )}
+          <div className="shadow-card-xl min-h-52 w-[446px] rounded-t-lg border border-slate-100 px-10 pb-4 pt-10">
+            <Image
+              data-testid="email-customization-preview-image"
+              src={logoUrl || fbLogoUrl}
+              alt="Logo"
+              className="mx-auto max-h-[100px] max-w-full object-contain"
+              width={192}
+              height={192}
+            />
+            <P className="font-bold">
+              {t("environments.settings.general.email_customization_preview_email_heading", {
+                userName: user?.name,
+              })}
+            </P>
+            <Muted className="text-slate-500">
+              {t("environments.settings.general.email_customization_preview_email_text")}
+            </Muted>
+          </div>
+        </div>
 
         {hasWhiteLabelPermission && isReadOnly && (
           <Alert variant="warning" className="mb-6 mt-4">

@@ -10,7 +10,6 @@ import {
   SAML_OAUTH_ENABLED,
   SAML_PRODUCT,
   SAML_TENANT,
-  SIGNUP_ENABLED,
 } from "@/lib/constants";
 import { FormWrapper } from "@/modules/auth/components/form-wrapper";
 import {
@@ -38,7 +37,7 @@ export const LoginPage = async () => {
       <FormWrapper>
         <LoginForm
           emailAuthEnabled={EMAIL_AUTH_ENABLED}
-          publicSignUpEnabled={SIGNUP_ENABLED}
+          publicSignUpEnabled={true}
           passwordResetEnabled={!PASSWORD_RESET_DISABLED}
           googleOAuthEnabled={GOOGLE_OAUTH_ENABLED}
           githubOAuthEnabled={GITHUB_OAUTH_ENABLED}

@@ -31,7 +31,6 @@ interface OrganizationActionsProps {
   organization: TOrganization;
   teams: TOrganizationTeam[];
   isInviteDisabled: boolean;
-  isAccessControlAllowed: boolean;
   isFormbricksCloud: boolean;
   environmentId: string;
   isMultiOrgEnabled: boolean;
@@ -45,12 +44,9 @@ export const OrganizationActions = ({
   membershipRole,
   teams,
   isLeaveOrganizationDisabled,
-  isInviteDisabled,
-  isAccessControlAllowed,
   isFormbricksCloud,
   environmentId,
   isMultiOrgEnabled,
-  isUserManagementDisabledFromUi,
   isStorageConfigured,
 }: OrganizationActionsProps) => {
   const router = useRouter();
@@ -140,7 +136,7 @@ export const OrganizationActions = ({
           </Button>
         )}
 
-        {!isInviteDisabled && isOwnerOrManager && !isUserManagementDisabledFromUi && (
+        {isOwnerOrManager && (
           <Button
             size="sm"
             variant="secondary"
@@ -156,7 +152,6 @@ export const OrganizationActions = ({
         setOpen={setInviteMemberModalOpen}
         onSubmit={handleAddMembers}
         membershipRole={membershipRole}
-        isAccessControlAllowed={isAccessControlAllowed}
         isFormbricksCloud={isFormbricksCloud}
         environmentId={environmentId}
         teams={teams}

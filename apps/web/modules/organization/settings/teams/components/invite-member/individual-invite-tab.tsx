@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { OrganizationRole } from "@prisma/client";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -23,7 +22,6 @@ interface IndividualInviteTabProps {
   setOpen: (v: boolean) => void;
   onSubmit: (data: { name: string; email: string; role: TOrganizationRole }[]) => void;
   teams: TOrganizationTeam[];
-  isAccessControlAllowed: boolean;
   isFormbricksCloud: boolean;
   environmentId: string;
   membershipRole?: TOrganizationRole;
@@ -33,9 +31,7 @@ export const IndividualInviteTab = ({
   setOpen,
   onSubmit,
   teams,
-  isAccessControlAllowed,
   isFormbricksCloud,
-  environmentId,
   membershipRole,
 }: IndividualInviteTabProps) => {
   const ZFormSchema = z.object({
@@ -52,7 +48,7 @@ export const IndividualInviteTab = ({
   const form = useForm<TFormData>({
     resolver: zodResolver(ZFormSchema),
     defaultValues: {
-      role: isAccessControlAllowed ? "member" : "owner",
+      role: "member",
       teamIds: [],
     },
   });
@@ -106,7 +102,7 @@ export const IndividualInviteTab = ({
         <div>
           <AddMemberRole
             control={control}
-            isAccessControlAllowed={isAccessControlAllowed}
+            isAccessControlAllowed={true}
             isFormbricksCloud={isFormbricksCloud}
             membershipRole={membershipRole}
           />
@@ -117,49 +113,29 @@ export const IndividualInviteTab = ({
           )}
         </div>
 
-        {isAccessControlAllowed && (
-          <FormField
-            control={control}
-            name="teamIds"
-            render={({ field }) => (
-              <FormItem className="flex flex-col space-y-2">
-                <FormLabel>{t("common.add_to_team")} </FormLabel>
-                <div className="space-y-2">
-                  <MultiSelect
-                    value={field.value}
-                    options={teamOptions}
-                    placeholder={t("environments.settings.teams.team_select_placeholder")}
-                    disabled={!teamOptions.length}
-                    onChange={(val) => field.onChange(val)}
-                  />
-                  {!teamOptions.length && (
-                    <Small className="font-normal text-amber-600">
-                      {t("environments.settings.teams.create_first_team_message")}
-                    </Small>
-                  )}
-                </div>
-              </FormItem>
-            )}
-          />
-        )}
-
-        {!isAccessControlAllowed && (
-          <Alert>
-            <AlertDescription className="flex">
-              {t("environments.settings.teams.upgrade_plan_notice_message")}
-              <Link
-                className="ml-1 underline"
-                target="_blank"
-                href={
-                  isFormbricksCloud
-                    ? `/environments/${environmentId}/settings/billing`
-                    : "https://formbricks.com/upgrade-self-hosting-license"
-                }>
-                {t("common.start_free_trial")}
-              </Link>
-            </AlertDescription>
-          </Alert>
-        )}
+        <FormField
+          control={control}
+          name="teamIds"
+          render={({ field }) => (
+            <FormItem className="flex flex-col space-y-2">
+              <FormLabel>{t("common.add_to_team")} </FormLabel>
+              <div className="space-y-2">
+                <MultiSelect
+                  value={field.value}
+                  options={teamOptions}
+                  placeholder={t("environments.settings.teams.team_select_placeholder")}
+                  disabled={!teamOptions.length}
+                  onChange={(val) => field.onChange(val)}
+                />
+                {!teamOptions.length && (
+                  <Small className="font-normal text-amber-600">
+                    {t("environments.settings.teams.create_first_team_message")}
+                  </Small>
+                )}
+              </div>
+            </FormItem>
+          )}
+        />
 
         <div className="flex items-end justify-end gap-x-2">
           <Button

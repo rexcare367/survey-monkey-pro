@@ -8,14 +8,12 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { TOrganizationRole } from "@formbricks/types/memberships";
 import { ZInvitees } from "@/modules/organization/settings/teams/types/invites";
-import { Alert, AlertDescription } from "@/modules/ui/components/alert";
 import { Button } from "@/modules/ui/components/button";
 import { Uploader } from "@/modules/ui/components/file-input/components/uploader";
 
 interface BulkInviteTabProps {
   setOpen: (v: boolean) => void;
   onSubmit: (data: { name: string; email: string; role: TOrganizationRole }[]) => void;
-  isAccessControlAllowed: boolean;
   isFormbricksCloud: boolean;
   isStorageConfigured: boolean;
 }
@@ -23,7 +21,6 @@ interface BulkInviteTabProps {
 export const BulkInviteTab = ({
   setOpen,
   onSubmit,
-  isAccessControlAllowed,
   isFormbricksCloud,
   isStorageConfigured,
 }: BulkInviteTabProps) => {
@@ -50,7 +47,7 @@ export const BulkInviteTab = ({
       },
       complete: (results: ParseResult<{ name: string; email: string; role: string }>) => {
         const members = results.data.map((csv) => {
-          let orgRole = isAccessControlAllowed ? csv.role.trim().toLowerCase() : "owner";
+          let orgRole = csv.role.trim().toLowerCase();
           if (!isFormbricksCloud) {
             orgRole = orgRole === "billing" ? "owner" : orgRole;
           }
@@ -120,17 +117,6 @@ export const BulkInviteTab = ({
               <XIcon className="h-4 w-4" />
             </Button>
           </div>
-        )}
-
-        {!isAccessControlAllowed && (
-          <Alert variant="default" className="mt-1.5 flex items-start bg-slate-50">
-            <AlertDescription className="ml-2">
-              <p className="text-sm">
-                <strong>{t("common.warning")}: </strong>
-                {t("environments.settings.general.bulk_invite_warning_description")}
-              </p>
-            </AlertDescription>
-          </Alert>
         )}
       </div>
 

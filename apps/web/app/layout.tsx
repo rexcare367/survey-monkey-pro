@@ -14,8 +14,8 @@ import "../modules/ui/globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Formbricks",
-    default: "Formbricks",
+    template: "%s | Survey-Monkey Pro",
+    default: "Survey-Monkey Pro",
   },
   description: "Open-Source Survey Suite",
 };
