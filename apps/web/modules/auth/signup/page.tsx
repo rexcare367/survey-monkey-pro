@@ -30,7 +30,7 @@ import { SignupForm } from "./components/signup-form";
 export const SignupPage = async ({ searchParams: searchParamsProps }) => {
   const searchParams = await searchParamsProps;
   const inviteToken = searchParams["inviteToken"] ?? null;
-  const [isMultOrgEnabled, isSsoEnabled, isSamlSsoEnabled] = await Promise.all([
+  const [isSsoEnabled, isSamlSsoEnabled] = await Promise.all([
     getIsMultiOrgEnabled(),
     getIsSsoEnabled(),
     getIsSamlSsoEnabled(),

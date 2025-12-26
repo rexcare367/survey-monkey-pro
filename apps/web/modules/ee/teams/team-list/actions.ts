@@ -7,7 +7,6 @@ import { checkAuthorizationUpdated } from "@/lib/utils/action-client/action-clie
 import { AuthenticatedActionClientCtx } from "@/lib/utils/action-client/types/context";
 import { getOrganizationIdFromTeamId } from "@/lib/utils/helper";
 import { withAuditLogging } from "@/modules/ee/audit-logs/lib/handler";
-import { checkRoleManagementPermission } from "@/modules/ee/role-management/actions";
 import { getTeamRoleByTeamIdUserId } from "@/modules/ee/teams/lib/roles";
 import {
   createTeam,

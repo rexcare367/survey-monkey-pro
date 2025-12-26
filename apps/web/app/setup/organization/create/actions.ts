@@ -1,14 +1,11 @@
 "use server";
 
 import { z } from "zod";
-import { OperationNotAllowedError } from "@formbricks/types/errors";
-import { gethasNoOrganizations } from "@/lib/instance/service";
 import { createMembership } from "@/lib/membership/service";
 import { createOrganization } from "@/lib/organization/service";
 import { authenticatedActionClient } from "@/lib/utils/action-client";
 import { AuthenticatedActionClientCtx } from "@/lib/utils/action-client/types/context";
 import { withAuditLogging } from "@/modules/ee/audit-logs/lib/handler";
-import { getIsMultiOrgEnabled } from "@/modules/ee/license-check/lib/utils";
 
 const ZCreateOrganizationAction = z.object({
   organizationName: z.string(),
@@ -19,13 +16,6 @@ export const createOrganizationAction = authenticatedActionClient.schema(ZCreate
     "created",
     "organization",
     async ({ ctx, parsedInput }: { ctx: AuthenticatedActionClientCtx; parsedInput: Record<string, any> }) => {
-      const hasNoOrganizations = await gethasNoOrganizations();
-      const isMultiOrgEnabled = await getIsMultiOrgEnabled();
-
-      if (!hasNoOrganizations && !isMultiOrgEnabled) {
-        throw new OperationNotAllowedError("This action can only be performed on a fresh instance.");
-      }
-
       const newOrganization = await createOrganization({
         name: parsedInput.organizationName,
       });

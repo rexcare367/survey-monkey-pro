@@ -50,14 +50,12 @@ interface LoginFormProps {
 
 export const LoginForm = ({
   emailAuthEnabled,
-  publicSignUpEnabled,
   passwordResetEnabled,
   googleOAuthEnabled,
   githubOAuthEnabled,
   azureOAuthEnabled,
   oidcOAuthEnabled,
   oidcDisplayName,
-  isMultiOrgEnabled,
   isSsoEnabled,
   samlSsoEnabled,
   samlTenant,

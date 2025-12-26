@@ -15,7 +15,6 @@ import { AuthenticatedActionClientCtx } from "@/lib/utils/action-client/types/co
 import { getOrganizationIdFromInviteId } from "@/lib/utils/helper";
 import { withAuditLogging } from "@/modules/ee/audit-logs/lib/handler";
 import { getIsMultiOrgEnabled } from "@/modules/ee/license-check/lib/utils";
-import { checkRoleManagementPermission } from "@/modules/ee/role-management/actions";
 import { sendInviteMemberEmail } from "@/modules/email";
 import {
   deleteMembership,
