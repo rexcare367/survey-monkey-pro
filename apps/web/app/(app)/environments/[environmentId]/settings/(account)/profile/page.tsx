@@ -1,0 +1,76 @@
+import { AccountSettingsNavbar } from "@/app/(app)/environments/[environmentId]/settings/(account)/components/AccountSettingsNavbar";
+import { AccountSecurity } from "@/app/(app)/environments/[environmentId]/settings/(account)/profile/components/AccountSecurity";
+import { EMAIL_VERIFICATION_DISABLED, IS_FORMBRICKS_CLOUD, PASSWORD_RESET_DISABLED } from "@/lib/constants";
+import { getOrganizationsWhereUserIsSingleOwner } from "@/lib/organization/service";
+import { getUser } from "@/lib/user/service";
+import { getTranslate } from "@/lingodotdev/server";
+import { getIsMultiOrgEnabled } from "@/modules/ee/license-check/lib/utils";
+import { getEnvironmentAuth } from "@/modules/environments/lib/utils";
+import { IdBadge } from "@/modules/ui/components/id-badge";
+import { PageContentWrapper } from "@/modules/ui/components/page-content-wrapper";
+import { PageHeader } from "@/modules/ui/components/page-header";
+import { SettingsCard } from "../../components/SettingsCard";
+import { DeleteAccount } from "./components/DeleteAccount";
+import { EditProfileDetailsForm } from "./components/EditProfileDetailsForm";
+
+const Page = async (props: { params: Promise<{ environmentId: string }> }) => {
+  const isMultiOrgEnabled = await getIsMultiOrgEnabled();
+  const params = await props.params;
+  const t = await getTranslate();
+  const { environmentId } = params;
+
+  const { session } = await getEnvironmentAuth(params.environmentId);
+
+  const organizationsWithSingleOwner = await getOrganizationsWhereUserIsSingleOwner(session.user.id);
+
+  const user = session?.user ? await getUser(session.user.id) : null;
+
+  if (!user) {
+    throw new Error(t("common.user_not_found"));
+  }
+
+  const isPasswordResetEnabled = !PASSWORD_RESET_DISABLED && user.identityProvider === "email";
+
+  return (
+    <PageContentWrapper>
+      <PageHeader pageTitle={t("common.account_settings")}>
+        <AccountSettingsNavbar environmentId={environmentId} activeId="profile" />
+      </PageHeader>
+      {user && (
+        <div>
+          <SettingsCard
+            title={t("environments.settings.profile.personal_information")}
+            description={t("environments.settings.profile.update_personal_info")}>
+            <EditProfileDetailsForm
+              user={user}
+              emailVerificationDisabled={EMAIL_VERIFICATION_DISABLED}
+              isPasswordResetEnabled={isPasswordResetEnabled}
+            />
+          </SettingsCard>
+          {user.identityProvider === "email" && (
+            <SettingsCard
+              title={t("common.security")}
+              description={t("environments.settings.profile.security_description")}>
+              <AccountSecurity user={user} />
+            </SettingsCard>
+          )}
+
+          <SettingsCard
+            title={t("environments.settings.profile.delete_account")}
+            description={t("environments.settings.profile.confirm_delete_account")}>
+            <DeleteAccount
+              session={session}
+              IS_FORMBRICKS_CLOUD={IS_FORMBRICKS_CLOUD}
+              user={user}
+              organizationsWithSingleOwner={organizationsWithSingleOwner}
+              isMultiOrgEnabled={isMultiOrgEnabled}
+            />
+          </SettingsCard>
+          <IdBadge id={user.id} label={t("common.profile_id")} variant="column" />
+        </div>
+      )}
+    </PageContentWrapper>
+  );
+};
+
+export default Page;

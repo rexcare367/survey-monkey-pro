@@ -1,0 +1,26 @@
+import { Metadata } from "next";
+import Link from "next/link";
+import { getTranslate } from "@/lingodotdev/server";
+import { Button } from "@/modules/ui/components/button";
+
+export const metadata: Metadata = {
+  title: "Intro",
+  description: "Survey-Monkey Pro - The fastest growing open source survey platform worldwide.",
+};
+
+export const IntroPage = async () => {
+  const t = await getTranslate();
+  return (
+    <div className="flex flex-col items-center">
+      <h2 className="mb-6 text-xl font-medium">{t("setup.intro.welcome_to")}</h2>
+      <div className="mx-auto max-w-sm space-y-4 text-sm leading-6 text-slate-600">
+        <p dangerouslySetInnerHTML={{ __html: t("setup.intro.paragraph_1") }} />
+        <p dangerouslySetInnerHTML={{ __html: t("setup.intro.paragraph_2") }} />
+        <p dangerouslySetInnerHTML={{ __html: t("setup.intro.paragraph_3") }} />
+      </div>
+      <Button className="mt-6" asChild>
+        <Link href="/setup/signup">{t("setup.intro.get_started")}</Link>
+      </Button>
+    </div>
+  );
+};
