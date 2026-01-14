@@ -64,11 +64,11 @@ const getSpecificFeatureFlag = async (
 };
 
 export const getIsMultiOrgEnabled = async (): Promise<boolean> => {
-  return getSpecificFeatureFlag("isMultiOrgEnabled");
+  return getSpecificFeatureFlag("isMultiOrgEnabled") || true;
 };
 
 export const getIsContactsEnabled = async (): Promise<boolean> => {
-  return getSpecificFeatureFlag("contacts");
+  return getSpecificFeatureFlag("contacts") || true;
 };
 
 export const getIsTwoFactorAuthEnabled = async (): Promise<boolean> => {

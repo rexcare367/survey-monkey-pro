@@ -266,7 +266,7 @@ export const LoginForm = ({
           <span className="leading-5 text-slate-500">{t("auth.login.new_to_formbricks")}</span>
           <br />
           <Link
-            href={inviteToken ? `/auth/signup?inviteToken=${inviteToken}` : "/auth/signup"}
+            href={inviteToken ? `/auth/signup?inviteToken=${inviteToken}` : "/setup/signup"}
             className="font-semibold text-slate-600 underline hover:text-slate-700">
             {t("auth.login.create_an_account")}
           </Link>
