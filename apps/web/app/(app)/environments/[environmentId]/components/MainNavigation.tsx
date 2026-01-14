@@ -8,7 +8,6 @@ import {
   MessageCircle,
   PanelLeftCloseIcon,
   PanelLeftOpenIcon,
-  RocketIcon,
   UserCircleIcon,
   UserIcon,
 } from "lucide-react";
@@ -22,12 +21,12 @@ import { TOrganizationRole } from "@formbricks/types/memberships";
 import { TOrganization } from "@formbricks/types/organizations";
 import { TUser } from "@formbricks/types/user";
 import { NavigationLink } from "@/app/(app)/environments/[environmentId]/components/NavigationLink";
-import { isNewerVersion } from "@/app/(app)/environments/[environmentId]/lib/utils";
+// import { isNewerVersion } from "@/app/(app)/environments/[environmentId]/lib/utils";
 import FBLogo from "@/images/formbricks-wordmark.svg";
 import { cn } from "@/lib/cn";
 import { getAccessFlags } from "@/lib/membership/utils";
 import { useSignOut } from "@/modules/auth/hooks/use-sign-out";
-import { getLatestStableFbReleaseAction } from "@/modules/projects/settings/(setup)/app-connection/actions";
+// import { getLatestStableFbReleaseAction } from "@/modules/projects/settings/(setup)/app-connection/actions";
 import { ProfileAvatar } from "@/modules/ui/components/avatars";
 import { Button } from "@/modules/ui/components/button";
 import {
@@ -36,7 +35,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/modules/ui/components/dropdown-menu";
-import packageJson from "../../../../../package.json";
+
+// import packageJson from "../../../../../package.json";
 
 interface NavigationProps {
   environment: TEnvironment;
@@ -54,20 +54,18 @@ export const MainNavigation = ({
   user,
   project,
   membershipRole,
-  isFormbricksCloud,
-  isDevelopment,
 }: NavigationProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const { t } = useTranslation();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(true);
-  const [latestVersion, setLatestVersion] = useState("");
   const { signOut: signOutWithAudit } = useSignOut({ id: user.id, email: user.email });
 
-  const { isManager, isOwner, isBilling } = getAccessFlags(membershipRole);
+  const { isBilling } = getAccessFlags(membershipRole);
+  // const { isManager, isOwner, isBilling } = getAccessFlags(membershipRole);
 
-  const isOwnerOrManager = isManager || isOwner;
+  // const isOwnerOrManager = isManager || isOwner;
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -139,20 +137,20 @@ export const MainNavigation = ({
     // },
   ];
 
-  useEffect(() => {
-    async function loadReleases() {
-      const res = await getLatestStableFbReleaseAction();
-      if (res?.data) {
-        const latestVersionTag = res.data;
-        const currentVersionTag = `v${packageJson.version}`;
+  // useEffect(() => {
+  //   async function loadReleases() {
+  //     const res = await getLatestStableFbReleaseAction();
+  //     if (res?.data) {
+  //       const latestVersionTag = res.data;
+  //       const currentVersionTag = `v${packageJson.version}`;
 
-        if (isNewerVersion(currentVersionTag, latestVersionTag)) {
-          setLatestVersion(latestVersionTag);
-        }
-      }
-    }
-    if (isOwnerOrManager) loadReleases();
-  }, [isOwnerOrManager]);
+  //       if (isNewerVersion(currentVersionTag, latestVersionTag)) {
+  //         setLatestVersion(latestVersionTag);
+  //       }
+  //     }
+  //   }
+  //   if (isOwnerOrManager) loadReleases();
+  // }, [isOwnerOrManager]);
 
   const mainNavigationLink = `/environments/${environment.id}/${isBilling ? "settings/billing/" : "surveys/"}`;
 
