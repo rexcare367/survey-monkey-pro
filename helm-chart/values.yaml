@@ -208,7 +208,7 @@ ingress:
   enabled: false # Enable/disable Ingress
   ingressClassName: alb # Specify the Ingress class
   hosts:
-    - host: k8s.formbricks.com
+    - host: k8s.merdekasurvey.com
       paths:
         - path: /
           pathType: "Prefix"

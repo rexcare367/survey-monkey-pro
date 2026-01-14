@@ -12,7 +12,7 @@ vi.mock("@/lib/env", () => ({
   env: {
     ENTERPRISE_LICENSE_KEY: "test-license-key",
     VERCEL_URL: "some.vercel.url",
-    FORMBRICKS_COM_URL: "https://app.formbricks.com",
+    FORMBRICKS_COM_URL: "https://app.merdekasurvey.com",
     HTTPS_PROXY: undefined,
     HTTP_PROXY: undefined,
   },
@@ -372,7 +372,7 @@ describe("License Core Logic", () => {
         env: {
           ENTERPRISE_LICENSE_KEY: "",
           VERCEL_URL: "some.vercel.url",
-          FORMBRICKS_COM_URL: "https://app.formbricks.com",
+          FORMBRICKS_COM_URL: "https://app.merdekasurvey.com",
           HTTPS_PROXY: undefined,
           HTTP_PROXY: undefined,
         },
@@ -425,7 +425,7 @@ describe("License Core Logic", () => {
         env: {
           ENTERPRISE_LICENSE_KEY: "test-license-key",
           VERCEL_URL: "some.vercel.url",
-          FORMBRICKS_COM_URL: "https://app.formbricks.com",
+          FORMBRICKS_COM_URL: "https://app.merdekasurvey.com",
           HTTPS_PROXY: undefined,
           HTTP_PROXY: undefined,
         },
@@ -518,7 +518,7 @@ describe("License Core Logic", () => {
         env: {
           ENTERPRISE_LICENSE_KEY: undefined,
           VERCEL_URL: "some.vercel.url",
-          FORMBRICKS_COM_URL: "https://app.formbricks.com",
+          FORMBRICKS_COM_URL: "https://app.merdekasurvey.com",
           HTTPS_PROXY: undefined,
           HTTP_PROXY: undefined,
         },
@@ -538,7 +538,7 @@ describe("License Core Logic", () => {
         env: {
           ENTERPRISE_LICENSE_KEY: testLicenseKey,
           VERCEL_URL: "some.vercel.url",
-          FORMBRICKS_COM_URL: "https://app.formbricks.com",
+          FORMBRICKS_COM_URL: "https://app.merdekasurvey.com",
           HTTPS_PROXY: undefined,
           HTTP_PROXY: undefined,
         },

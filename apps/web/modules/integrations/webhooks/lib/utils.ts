@@ -12,7 +12,7 @@ export const validWebHookURL = (urlInput: string) => {
     }
 
     const domainError: string =
-      "Please enter a complete URL with a valid domain (e.g., https://formbricks.com)";
+      "Please enter a complete URL with a valid domain (e.g., https://merdekasurvey.com)";
 
     const multipleSlashesPattern = /(?<!:)\/\/+/;
     if (multipleSlashesPattern.test(trimmedInput)) {

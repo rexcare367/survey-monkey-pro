@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "version": "0.1.0",
-  "homepage": "https://formbricks.com",
+  "homepage": "https://merdekasurvey.com",
   "license": "MIT",
   "description": "Logger for Formbricks",
   "main": "./dist/index.js",
@@ -33,7 +33,7 @@
     "build": "tsc && vite build",
     "test": "vitest run"
   },
-  "author": "Formbricks <hola@formbricks.com>",
+  "author": "Formbricks <hola@merdekasurvey.com>",
   "dependencies": {
     "zod": "3.24.4",
     "pino": "10.0.0",

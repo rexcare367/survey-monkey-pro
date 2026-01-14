@@ -179,13 +179,13 @@ export const QuotasCard = ({
                       : t("common.request_trial_license"),
                     href: isFormbricksCloud
                       ? `/environments/${environmentId}/settings/billing`
-                      : "https://formbricks.com/upgrade-self-hosting-license",
+                      : "https://merdekasurvey.com/upgrade-self-hosting-license",
                   },
                   {
                     text: t("common.learn_more"),
                     href: isFormbricksCloud
                       ? `/environments/${environmentId}/settings/billing`
-                      : "https://formbricks.com/learn-more-self-hosting-license",
+                      : "https://merdekasurvey.com/learn-more-self-hosting-license",
                   },
                 ]}
               />

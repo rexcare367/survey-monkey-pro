@@ -118,7 +118,7 @@ export const EndScreenForm = ({
               } else {
                 updateSurvey({
                   buttonLabel: { default: t("environments.surveys.edit.create_your_own_survey") },
-                  buttonLink: "https://formbricks.com",
+                  buttonLink: "https://merdekasurvey.com",
                 });
               }
               setshowEndingCardCTA(!showEndingCardCTA);
@@ -190,7 +190,7 @@ export const EndScreenForm = ({
                           id="buttonLink"
                           name="buttonLink"
                           className={`relative text-black caret-black ${!isExternalUrlsAllowed ? "cursor-not-allowed opacity-50" : ""}`}
-                          placeholder="https://formbricks.com"
+                          placeholder="https://merdekasurvey.com"
                           value={
                             recallToHeadline(
                               {

@@ -996,7 +996,7 @@ describe("surveys", () => {
         filter: [
           {
             elementType: { type: "Meta", label: "url", id: "url" },
-            filterType: { filterValue: "Contains", filterComboBoxValue: "formbricks.com" },
+            filterType: { filterValue: "Contains", filterComboBoxValue: "merdekasurvey.com" },
           },
           {
             elementType: { type: "Meta", label: "source", id: "source" },
@@ -1007,7 +1007,7 @@ describe("surveys", () => {
 
       const result = getFormattedFilters(survey, selectedFilter, dateRange);
 
-      expect(result.meta?.url).toEqual({ op: "contains", value: "formbricks.com" });
+      expect(result.meta?.url).toEqual({ op: "contains", value: "merdekasurvey.com" });
       expect(result.meta?.source).toEqual({ op: "equals", value: "newsletter" });
     });
 

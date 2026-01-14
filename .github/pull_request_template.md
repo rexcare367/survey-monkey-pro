@@ -24,7 +24,7 @@ Fixes #(issue)
 ### Required
 
 - [ ] Filled out the "How to test" section in this PR
-- [ ] Read [How we Code at Formbricks](<[https://github.com/formbricks/formbricks/blob/main/CONTRIBUTING.md](https://formbricks.com/docs/contributing/how-we-code)>)
+- [ ] Read [How we Code at Formbricks](<[https://github.com/formbricks/formbricks/blob/main/CONTRIBUTING.md](https://merdekasurvey.com/docs/contributing/how-we-code)>)
 - [ ] Self-reviewed my own code
 - [ ] Commented on my code in hard-to-understand bits
 - [ ] Ran `pnpm build`

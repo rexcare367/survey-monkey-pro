@@ -252,7 +252,7 @@ const sendTelemetry = async (lastSent: number) => {
 
   // Send telemetry to Formbricks Enterprise endpoint.
   // This endpoint collects usage statistics for enterprise license validation and analytics.
-  const url = `https://ee.formbricks.com/api/v1/instances/${instanceId}/usage-updates`;
+  const url = `https://ee.merdekasurvey.com/api/v1/instances/${instanceId}/usage-updates`;
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 10000); // 10 second timeout

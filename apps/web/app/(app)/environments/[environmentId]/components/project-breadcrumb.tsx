@@ -182,7 +182,7 @@ export const ProjectBreadcrumb = ({
         text: t("environments.settings.billing.upgrade"),
         href: isLicenseActive
           ? `/environments/${currentEnvironmentId}/settings/enterprise`
-          : "https://formbricks.com/upgrade-self-hosted-license",
+          : "https://merdekasurvey.com/upgrade-self-hosted-license",
       },
       {
         text: t("common.cancel"),

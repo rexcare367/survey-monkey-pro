@@ -8,7 +8,7 @@ import { sendToPipeline } from "./pipelines";
 // Mock the constants module
 vi.mock("@/lib/constants", () => ({
   CRON_SECRET: "mocked-cron-secret",
-  WEBAPP_URL: "https://test.formbricks.com",
+  WEBAPP_URL: "https://test.merdekasurvey.com",
 }));
 
 // Mock the logger
@@ -53,7 +53,7 @@ describe("pipelines", () => {
 
     // Check that fetch was called with the correct arguments
     expect(mockFetch).toHaveBeenCalledTimes(1);
-    expect(mockFetch).toHaveBeenCalledWith("https://test.formbricks.com/api/pipeline", {
+    expect(mockFetch).toHaveBeenCalledWith("https://test.merdekasurvey.com/api/pipeline", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

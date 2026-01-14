@@ -127,7 +127,7 @@ export const MainNavigation = ({
     },
     // {
     //   label: t("common.documentation"),
-    //   href: "https://formbricks.com/docs",
+    //   href: "https://merdekasurvey.com/docs",
     //   target: "_blank",
     //   icon: ArrowUpRightIcon,
     // },
@@ -215,19 +215,6 @@ export const MainNavigation = ({
           </div>
 
           <div>
-            {/* New Version Available */}
-            {!isCollapsed && isOwnerOrManager && latestVersion && !isFormbricksCloud && !isDevelopment && (
-              <Link
-                href="https://github.com/formbricks/formbricks/releases"
-                target="_blank"
-                className="m-2 flex items-center space-x-4 rounded-lg border border-slate-200 bg-slate-100 p-2 text-sm text-slate-800 hover:border-slate-300 hover:bg-slate-200">
-                <p className="flex items-center justify-center gap-x-2 text-xs">
-                  <RocketIcon strokeWidth={1.5} className="mx-1 h-6 w-6 text-slate-900" />
-                  {t("common.new_version_available", { version: latestVersion })}
-                </p>
-              </Link>
-            )}
-
             {/* User Switch */}
             <div className="flex items-center">
               <DropdownMenu>

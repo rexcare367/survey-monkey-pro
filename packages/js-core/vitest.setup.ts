@@ -26,7 +26,7 @@ const windowMock = {
   location: {
     search: "formbricksDebug=true",
     protocol: "https:",
-    host: "formbricks.com",
+    host: "merdekasurvey.com",
     pathname: "/",
   },
   setInterval: vi.fn(),
