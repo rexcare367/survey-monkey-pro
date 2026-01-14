@@ -29,5 +29,5 @@ body:
     attributes:
       label: Your Environment
       options:
-        - Formbricks Cloud (app.formbricks.com)
+        - Formbricks Cloud (app.merdekasurvey.com)
         - Self-hosted Formbricks

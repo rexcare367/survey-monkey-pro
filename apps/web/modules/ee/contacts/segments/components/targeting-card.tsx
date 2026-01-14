@@ -427,7 +427,7 @@ export function TargetingCard({
               <span className="mr-1 text-slate-600">
                 {t("environments.segments.user_targeting_is_currently_only_available_when")}{" "}
                 <Link
-                  href="https://formbricks.com//docs/app-surveys/user-identification"
+                  href="https://merdekasurvey.com//docs/app-surveys/user-identification"
                   target="blank"
                   className="underline">
                   {t("environments.segments.identifying_users")}

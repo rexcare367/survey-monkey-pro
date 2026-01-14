@@ -12,10 +12,10 @@ keywords:
   - postgresql
   - redis
 
-home: https://formbricks.com/docs/self-hosting/setup/kubernetes
+home: https://merdekasurvey.com/docs/self-hosting/setup/kubernetes
 maintainers:
   - name: Formbricks
-    email: info@formbricks.com
+    email: info@merdekasurvey.com
 
 dependencies:
   - name: postgresql

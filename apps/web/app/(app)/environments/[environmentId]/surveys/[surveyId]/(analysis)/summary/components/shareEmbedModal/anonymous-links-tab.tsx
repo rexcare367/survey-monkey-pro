@@ -331,19 +331,19 @@ export const AnonymousLinksTab = ({
           links={[
             {
               title: t("environments.surveys.share.anonymous_links.single_use_links"),
-              href: "https://formbricks.com/docs/xm-and-surveys/surveys/link-surveys/single-use-links",
+              href: "https://merdekasurvey.com/docs/xm-and-surveys/surveys/link-surveys/single-use-links",
             },
             {
               title: t("environments.surveys.share.anonymous_links.data_prefilling"),
-              href: "https://formbricks.com/docs/xm-and-surveys/surveys/link-surveys/data-prefilling",
+              href: "https://merdekasurvey.com/docs/xm-and-surveys/surveys/link-surveys/data-prefilling",
             },
             {
               title: t("environments.surveys.share.anonymous_links.source_tracking"),
-              href: "https://formbricks.com/docs/xm-and-surveys/surveys/link-surveys/source-tracking",
+              href: "https://merdekasurvey.com/docs/xm-and-surveys/surveys/link-surveys/source-tracking",
             },
             {
               title: t("environments.surveys.share.anonymous_links.custom_start_point"),
-              href: "https://formbricks.com/docs/xm-and-surveys/surveys/link-surveys/start-at-question",
+              href: "https://merdekasurvey.com/docs/xm-and-surveys/surveys/link-surveys/start-at-question",
             },
           ]}
         />

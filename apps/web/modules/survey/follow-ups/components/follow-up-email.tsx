@@ -23,7 +23,7 @@ import { getTranslate } from "@/lingodotdev/server";
 import { renderEmailResponseValue } from "@/modules/email/emails/lib/utils";
 
 const fbLogoUrl = FB_LOGO_URL;
-const logoLink = "https://formbricks.com?utm_source=email_header&utm_medium=email";
+const logoLink = "https://merdekasurvey.com?utm_source=email_header&utm_medium=email";
 
 interface FollowUpEmailProps {
   readonly followUp: TSurveyFollowUp;
@@ -94,7 +94,7 @@ export async function FollowUpEmail(props: FollowUpEmailProps): Promise<React.JS
             <Section className="mt-4 text-center text-sm">
               <Link
                 className="m-0 text-sm text-slate-500"
-                href="https://formbricks.com/?utm_source=email_header&utm_medium=email"
+                href="https://merdekasurvey.com/?utm_source=email_header&utm_medium=email"
                 target="_blank"
                 rel="noopener noreferrer">
                 {t("emails.email_template_text_1")}

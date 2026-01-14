@@ -4,7 +4,7 @@
 
 <p align="center">
 
-<a href="https://formbricks.com">
+<a href="https://merdekasurvey.com">
 
 <img width="120" alt="Open Source Privacy First Experience Management Solution Qualtrics Alternative Logo" src="https://github.com/formbricks/formbricks/assets/72809645/0086704f-bee7-4d38-9cc8-fa42ee59e004">
 
@@ -15,7 +15,7 @@
 <p align="center">
 The Open Source Qualtrics Alternative
 <br />
-<a href="https://formbricks.com/">Website</a>
+<a href="https://merdekasurvey.com/">Website</a>
 </p>
 </p>
 
@@ -47,7 +47,7 @@ The Open Source Qualtrics Alternative
 
 Formbricks provides a free and open source surveying platform. Gather feedback at every point in the user journey with beautiful in-app, website, link and email surveys. Build on top of Formbricks or leverage prebuilt data analysis capabilities.
 
-**Try it out in the cloud at [formbricks.com](https://app.formbricks.com/auth/signup)**
+**Try it out in the cloud at [merdekasurvey.com](https://app.merdekasurvey.com/auth/signup)**
 
 ## 💪 Mission: Empower your team, craft an irresistible experience.
 
@@ -119,7 +119,7 @@ We've got several options depending on your need to help you quickly get started
 
 ### ☁️ Cloud Version
 
-Formbricks has a hosted cloud offering with a generous free plan to get you up and running as quickly as possible. To get started, please visit [formbricks.com](https://app.formbricks.com/auth/signup).
+Formbricks has a hosted cloud offering with a generous free plan to get you up and running as quickly as possible. To get started, please visit [merdekasurvey.com](https://app.merdekasurvey.com/auth/signup).
 
 <a id="self-hosted-version"></a>
 
@@ -131,7 +131,7 @@ If you opt for self-hosting Formbricks, here are a few options to consider:
 
 #### Docker
 
-To get started with self-hosting with Docker, take a look at our [self-hosting docs](https://formbricks.com/docs/self-hosting/deployment).
+To get started with self-hosting with Docker, take a look at our [self-hosting docs](https://merdekasurvey.com/docs/self-hosting/deployment).
 
 #### Community-managed One Click Hosting
 
@@ -169,7 +169,7 @@ Here is what you need to be able to run Formbricks:
 
 ### Local Setup
 
-To get started locally, we've got a [guide to help you](https://formbricks.com/docs/developer-docs/contributing/get-started#local-machine-setup).
+To get started locally, we've got a [guide to help you](https://merdekasurvey.com/docs/developer-docs/contributing/get-started#local-machine-setup).
 
 ### Gitpod Setup
 
@@ -217,7 +217,7 @@ Let's have a chat about your survey needs and get you started.
 
 ## 🔒 Security
 
-We take security very seriously. If you come across any security vulnerabilities, please disclose them by sending an email to security@formbricks.com. We appreciate your help in making our platform as secure as possible and are committed to working with you to resolve any issues quickly and efficiently. See [`SECURITY.md`](./SECURITY.md) for more information.
+We take security very seriously. If you come across any security vulnerabilities, please disclose them by sending an email to security@merdekasurvey.com. We appreciate your help in making our platform as secure as possible and are committed to working with you to resolve any issues quickly and efficiently. See [`SECURITY.md`](./SECURITY.md) for more information.
 
 <a id="license"></a>
 
@@ -229,11 +229,11 @@ The Formbricks core application is licensed under the [AGPLv3 Open Source Licens
 
 ### The Enterprise Edition
 
-Additional to the AGPL licensed Formbricks core, this repository contains code licensed under an Enterprise license. The [code](https://github.com/formbricks/formbricks/tree/main/apps/web/modules/ee) and [license](https://github.com/formbricks/formbricks/blob/main/apps/web/modules/ee/LICENSE) for the enterprise functionality can be found in the `/apps/web/modules/ee` folder of this repository. This additional functionality is not part of the AGPLv3 licensed Formbricks core and is designed to meet the needs of larger teams and enterprises. This advanced functionality is already included in the Docker images, but you need an [Enterprise License Key](https://formbricks.com/docs/self-hosting/enterprise) to unlock it.
+Additional to the AGPL licensed Formbricks core, this repository contains code licensed under an Enterprise license. The [code](https://github.com/formbricks/formbricks/tree/main/apps/web/modules/ee) and [license](https://github.com/formbricks/formbricks/blob/main/apps/web/modules/ee/LICENSE) for the enterprise functionality can be found in the `/apps/web/modules/ee` folder of this repository. This additional functionality is not part of the AGPLv3 licensed Formbricks core and is designed to meet the needs of larger teams and enterprises. This advanced functionality is already included in the Docker images, but you need an [Enterprise License Key](https://merdekasurvey.com/docs/self-hosting/enterprise) to unlock it.
 
 ### White-Labeling Formbricks and Other Licensing Needs
 
-We currently do not offer Formbricks white-labeled. That means that we don't sell a license which let's other companies resell Formbricks to third parties under their name nor take parts (like the survey editor) out of Formbricks to add to their own software products. Any other needs? [Send us an email](mailto:hola@formbricks.com).
+We currently do not offer Formbricks white-labeled. That means that we don't sell a license which let's other companies resell Formbricks to third parties under their name nor take parts (like the survey editor) out of Formbricks to add to their own software products. Any other needs? [Send us an email](mailto:hola@merdekasurvey.com).
 
 ### Why charge for Enterprise Features?
 

@@ -109,7 +109,7 @@ install_formbricks() {
 
   # Ask for HSTS configuration for HTTPS redirection if custom certificate is used
   if [[ $https_setup == "n" ]]; then
-    echo "You have chosen not to set up HTTPS certificate for your domain. Please make sure to set up HTTPS on your own. You can refer to the Formbricks documentation(https://formbricks.com/docs/self-hosting/custom-ssl) for more information."
+    echo "You have chosen not to set up HTTPS certificate for your domain. Please make sure to set up HTTPS on your own. You can refer to the Formbricks documentation(https://merdekasurvey.com/docs/self-hosting/custom-ssl) for more information."
 
     echo "🔗 Do you want to enforce HTTPS (HSTS)? [Y/n]"
     read hsts_enabled

@@ -51,7 +51,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "app.formbricks.com",
+        hostname: "app.merdekasurvey.com",
       },
       {
         protocol: "https",

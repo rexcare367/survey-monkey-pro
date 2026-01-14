@@ -19,7 +19,7 @@ Data prefilling via URL comes in handy when you:
 ## Quick Example
 
 ```sh Example URL
-https://app.formbricks.com/s/clin3dxja02k8l80hpwmx4bjy?question_id_1=answer_1&question_id_2=answer_2&skipPrefilled=true
+https://app.merdekasurvey.com/s/clin3dxja02k8l80hpwmx4bjy?question_id_1=answer_1&question_id_2=answer_2&skipPrefilled=true
 ```
 
 ## How it works
@@ -34,7 +34,7 @@ https://app.formbricks.com/s/clin3dxja02k8l80hpwmx4bjy?question_id_1=answer_1&qu
 You can skip prefilled questions by adding the `skipPrefilled` parameter in the URL. To skip prefilled questions and show the next available question, add `skipPrefilled=true` to the URL. By default, `skipPrefilled` is set to `false`.
 
 ```sh Skipping prefilled questions
-app.formbricks.com/s/clin3dxj?question_id_1=answer_1&skipPrefilled=true
+app.merdekasurvey.com/s/clin3dxj?question_id_1=answer_1&skipPrefilled=true
 ```
 
 ### Prefilling multiple values
@@ -56,7 +56,7 @@ Here are a few examples to get you started:
 Translates to 5 stars / points / emojis:
 
 ```sh Rating Question
-https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?rating_question_id=5
+https://app.merdekasurvey.com/s/clin3yxja52k8l80hpwmx4bjy?rating_question_id=5
 ```
 
 ### NPS Question
@@ -64,7 +64,7 @@ https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?rating_question_id=5
 Translates to an NPS rating of 10:
 
 ```sh NPS Questions
-https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?nps_question_id=10
+https://app.merdekasurvey.com/s/clin3yxja52k8l80hpwmx4bjy?nps_question_id=10
 ```
 
 ### Single Select Question (Radio)
@@ -72,7 +72,7 @@ https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?nps_question_id=10
 Chooses the option 'Very disappointed' in the single select question. The string has to be identical to the option in your question:
 
 ```sh Single-select Question
-https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?single_select_question_id=Very%20disappointed
+https://app.merdekasurvey.com/s/clin3yxja52k8l80hpwmx4bjy?single_select_question_id=Very%20disappointed
 ```
 
 ### Multi Select Question (Checkbox)
@@ -80,7 +80,7 @@ https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?single_select_question_id
 Selects three options 'Sun, Palms and Beach' in the multi select question. The strings have to be identical to the options in your question:
 
 ```sh Multi-select Question
-https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?multi_select_question_id=Sun%2CPalms%2CBeach
+https://app.merdekasurvey.com/s/clin3yxja52k8l80hpwmx4bjy?multi_select_question_id=Sun%2CPalms%2CBeach
 ```
 
 ### Open Text Question
@@ -88,7 +88,7 @@ https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?multi_select_question_id=
 Adds 'I love Formbricks' as the answer to the open text question:
 
 ```sh Open Text Question
-https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?openText_question_id=I%20love%20Formbricks
+https://app.merdekasurvey.com/s/clin3yxja52k8l80hpwmx4bjy?openText_question_id=I%20love%20Formbricks
 ```
 
 ### CTA Question
@@ -96,7 +96,7 @@ https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?openText_question_id=I%20
 Accepts only 'dismissed' as answer option. Due to the risk of domain abuse, this value cannot be set to 'clicked' via prefilling:
 
 ```txt CTA Question
-https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?cta_question_id=dismissed
+https://app.merdekasurvey.com/s/clin3yxja52k8l80hpwmx4bjy?cta_question_id=dismissed
 ```
 
 <Note>
@@ -108,7 +108,7 @@ https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?cta_question_id=dismissed
 Adds 'accepted' as the answer to the Consent question. Alternatively, you can set it to 'dismissed' to skip the question.
 
 ```txt Consent Question
-https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?consent_question_id=accepted
+https://app.merdekasurvey.com/s/clin3yxja52k8l80hpwmx4bjy?consent_question_id=accepted
 ```
 
 ### Picture Selection Question
@@ -116,7 +116,7 @@ https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?consent_question_id=accep
 Adds index of the selected image(s) as the answer to the Picture Selection question. The index starts from 1
 
 ```txt Picture Selection Question.
-https://app.formbricks.com/s/clin3yxja52k8l80hpwmx4bjy?pictureSelection_question_id=1%2C2%2C3
+https://app.merdekasurvey.com/s/clin3yxja52k8l80hpwmx4bjy?pictureSelection_question_id=1%2C2%2C3
 ```
 
 <Note>All other question types, you currently cannot prefill via the URL.</Note>

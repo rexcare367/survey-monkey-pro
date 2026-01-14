@@ -1,7 +1,7 @@
 # Security Policy of Formbricks
 
 This is Formbrick's security policy. Please reach out to us
-on Github or, if privately, via <security@formbricks.com>
+on Github or, if privately, via <security@merdekasurvey.com>
 
 ## Introduction
 
@@ -51,7 +51,7 @@ In the interest of responsibly managing vulnerabilities, please adhere to the fo
 > Do not reveal the problem to others until it has been resolved.
 
 1. **Send a Detailed Report**:
-   - Raise a security report on [Github](https://github.com/formbricks/formbricks/issues/new/choose) or send an email to [security@formbricks.com](mailto:security@formbricks.com).
+   - Raise a security report on [Github](https://github.com/formbricks/formbricks/issues/new/choose) or send an email to [security@merdekasurvey.com](mailto:security@merdekasurvey.com).
    - Include:
      - Problem description.
      - Detailed, reproducible steps, with screenshots where possible.

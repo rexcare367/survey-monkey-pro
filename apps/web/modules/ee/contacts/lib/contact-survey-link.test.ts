@@ -28,7 +28,7 @@ vi.mock("@/lib/constants", () => ({
 }));
 
 vi.mock("@/lib/getPublicUrl", () => ({
-  getPublicDomain: vi.fn().mockReturnValue("https://test.formbricks.com"),
+  getPublicDomain: vi.fn().mockReturnValue("https://test.merdekasurvey.com"),
 }));
 
 vi.mock("@/lib/crypto", () => ({
@@ -177,7 +177,7 @@ describe("Contact Survey Link", () => {
       // Re‑mock constants to simulate missing ENCRYPTION_KEY
       vi.doMock("@/lib/constants", () => ({
         ENCRYPTION_KEY: undefined,
-        PUBLIC_URL: "https://test.formbricks.com",
+        PUBLIC_URL: "https://test.merdekasurvey.com",
       }));
       // Re‑import the modules so they pick up the new mock
       const { getContactSurveyLink } = await import("./contact-survey-link");

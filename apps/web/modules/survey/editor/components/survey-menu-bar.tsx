@@ -375,7 +375,7 @@ export const SurveyMenuBar = ({
               <AlertButton className="flex items-center justify-center">
                 <a
                   className="flex h-full w-full items-center justify-center !bg-white"
-                  href="https://formbricks.com/docs/self-hosting/configuration/file-uploads"
+                  href="https://merdekasurvey.com/docs/self-hosting/configuration/file-uploads"
                   target="_blank"
                   rel="noopener noreferrer">
                   <span>{t("common.learn_more")}</span>

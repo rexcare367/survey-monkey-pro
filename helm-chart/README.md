@@ -4,13 +4,13 @@
 
 A Helm chart for Formbricks with PostgreSQL, Redis
 
-**Homepage:** <https://formbricks.com/docs/self-hosting/setup/kubernetes>
+**Homepage:** <https://merdekasurvey.com/docs/self-hosting/setup/kubernetes>
 
 ## Maintainers
 
 | Name       | Email                 | Url |
 | ---------- | --------------------- | --- |
-| Formbricks | <info@formbricks.com> |     |
+| Formbricks | <info@merdekasurvey.com> |     |
 
 ## Requirements
 
@@ -98,7 +98,7 @@ A Helm chart for Formbricks with PostgreSQL, Redis
 | externalSecret.secretStore.name                                    | string | `"aws-secrets-manager"`           |             |
 | ingress.annotations                                                | object | `{}`                              |             |
 | ingress.enabled                                                    | bool   | `false`                           |             |
-| ingress.hosts[0].host                                              | string | `"k8s.formbricks.com"`            |             |
+| ingress.hosts[0].host                                              | string | `"k8s.merdekasurvey.com"`            |             |
 | ingress.hosts[0].paths[0].path                                     | string | `"/"`                             |             |
 | ingress.hosts[0].paths[0].pathType                                 | string | `"Prefix"`                        |             |
 | ingress.hosts[0].paths[0].serviceName                              | string | `"formbricks"`                    |             |

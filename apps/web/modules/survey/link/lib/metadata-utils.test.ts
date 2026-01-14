@@ -23,7 +23,7 @@ vi.mock("@/modules/survey/link/lib/project", () => ({
 // Mock constants
 vi.mock("@/lib/constants", () => ({
   IS_FORMBRICKS_CLOUD: false,
-  WEBAPP_URL: "https://test.formbricks.com",
+  WEBAPP_URL: "https://test.merdekasurvey.com",
 }));
 
 vi.mock("@/lib/styling/constants", () => ({
@@ -153,7 +153,7 @@ describe("Metadata Utils", () => {
       // Temporarily modify the mocked module
       vi.doMock("@/lib/constants", () => ({
         IS_FORMBRICKS_CLOUD: true,
-        WEBAPP_URL: "https://test.formbricks.com",
+        WEBAPP_URL: "https://test.merdekasurvey.com",
       }));
 
       // Re-import the function to use the updated mock
@@ -180,7 +180,7 @@ describe("Metadata Utils", () => {
       // Reset the mock
       vi.doMock("@/lib/constants", () => ({
         IS_FORMBRICKS_CLOUD: false,
-        WEBAPP_URL: "https://test.formbricks.com",
+        WEBAPP_URL: "https://test.merdekasurvey.com",
       }));
     });
 

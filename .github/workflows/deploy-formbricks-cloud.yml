@@ -115,9 +115,9 @@ jobs:
         run: |
           # Set hostname based on environment
           if [[ "$ENVIRONMENT" == "production" ]]; then
-            PURGE_HOST="app.formbricks.com"
+            PURGE_HOST="app.merdekasurvey.com"
           else
-            PURGE_HOST="stage.app.formbricks.com"
+            PURGE_HOST="stage.app.merdekasurvey.com"
           fi
 
           echo "Purging Cloudflare cache for host: $PURGE_HOST (environment: $ENVIRONMENT, zone: $CF_ZONE_ID)"

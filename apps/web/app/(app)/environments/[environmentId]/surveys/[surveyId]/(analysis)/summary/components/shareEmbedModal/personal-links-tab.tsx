@@ -168,13 +168,13 @@ export const PersonalLinksTab = ({
             text: isFormbricksCloud ? t("common.start_free_trial") : t("common.request_trial_license"),
             href: isFormbricksCloud
               ? `/environments/${environmentId}/settings/billing`
-              : "https://formbricks.com/upgrade-self-hosting-license",
+              : "https://merdekasurvey.com/upgrade-self-hosting-license",
           },
           {
             text: t("common.learn_more"),
             href: isFormbricksCloud
               ? `/environments/${environmentId}/settings/billing`
-              : "https://formbricks.com/learn-more-self-hosting-license",
+              : "https://merdekasurvey.com/learn-more-self-hosting-license",
           },
         ]}
       />
@@ -254,7 +254,7 @@ export const PersonalLinksTab = ({
         links={[
           {
             title: t("environments.surveys.share.personal_links.work_with_segments"),
-            href: "https://formbricks.com/docs/xm-and-surveys/surveys/website-app-surveys/advanced-targeting#segment-configuration",
+            href: "https://merdekasurvey.com/docs/xm-and-surveys/surveys/website-app-surveys/advanced-targeting#segment-configuration",
           },
         ]}
       />

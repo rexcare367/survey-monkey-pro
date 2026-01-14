@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "version": "0.1.0",
-  "homepage": "https://formbricks.com",
+  "homepage": "https://merdekasurvey.com",
   "description": "Unified Redis cache for Formbricks",
   "main": "./dist/index.js",
   "types": "./dist/src/index.d.ts",
@@ -35,7 +35,7 @@
     "test:coverage": "vitest run --coverage",
     "go": "vite build --watch --mode dev"
   },
-  "author": "Formbricks <hola@formbricks.com>",
+  "author": "Formbricks <hola@merdekasurvey.com>",
   "dependencies": {
     "@formbricks/logger": "workspace:*",
     "redis": "5.8.1",

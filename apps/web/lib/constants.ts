@@ -52,9 +52,9 @@ export const OIDC_DISPLAY_NAME = env.OIDC_DISPLAY_NAME;
 export const OIDC_SIGNING_ALGORITHM = env.OIDC_SIGNING_ALGORITHM;
 
 export const SAML_DATABASE_URL = env.SAML_DATABASE_URL;
-export const SAML_TENANT = "formbricks.com";
+export const SAML_TENANT = "merdekasurvey.com";
 export const SAML_PRODUCT = "formbricks";
-export const SAML_AUDIENCE = "https://saml.formbricks.com";
+export const SAML_AUDIENCE = "https://saml.merdekasurvey.com";
 export const SAML_PATH = "/api/auth/saml/callback";
 
 export const EMAIL_AUTH_ENABLED = env.EMAIL_AUTH_DISABLED !== "1";

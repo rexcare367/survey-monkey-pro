@@ -4,7 +4,7 @@ import React from "react";
 import { FB_LOGO_URL, IMPRINT_ADDRESS, IMPRINT_URL, PRIVACY_URL } from "@/lib/constants";
 
 const fbLogoUrl = FB_LOGO_URL;
-const logoLink = "https://formbricks.com?utm_source=email_header&utm_medium=email";
+const logoLink = "https://merdekasurvey.com?utm_source=email_header&utm_medium=email";
 
 interface EmailTemplateProps {
   readonly children: React.ReactNode;
@@ -48,7 +48,7 @@ export async function EmailTemplate({
           <Section className="mt-4 text-center text-sm">
             <Link
               className="m-0 text-sm font-normal text-slate-500"
-              href="https://formbricks.com/?utm_source=email_header&utm_medium=email"
+              href="https://merdekasurvey.com/?utm_source=email_header&utm_medium=email"
               target="_blank"
               rel="noopener noreferrer">
               {t("emails.email_template_text_1")}

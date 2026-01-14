@@ -5,7 +5,7 @@ export function FormbricksBranding() {
   return (
     <span className="fb-flex fb-justify-center">
       <a
-        href="https://formbricks.com?utm_source=survey_branding"
+        href="https://merdekasurvey.com?utm_source=survey_branding"
         target="_blank"
         tabIndex={-1}
         rel="noopener">

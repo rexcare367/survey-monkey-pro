@@ -47,7 +47,7 @@ export const DeleteAccountModal = ({
 
       // Manual redirect after signOut completes
       if (isFormbricksCloud) {
-        window.location.replace("https://app.formbricks.com/s/clri52y3z8f221225wjdhsoo2");
+        window.location.replace("https://app.merdekasurvey.com/s/clri52y3z8f221225wjdhsoo2");
       } else {
         window.location.replace("/auth/login");
       }

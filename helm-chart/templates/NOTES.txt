@@ -89,8 +89,8 @@ The following environment variables have been automatically generated:
 - `NEXTAUTH_SECRET`: A random 32-character string
 - `ENCRYPTION_KEY`: A random 32-character string
 - `CRON_SECRET`: A random 32-character string
-- 'EMAIL_VERIFICATION_DISABLED': 1 # By Default email verification is disabled, configure SMTP settings to enable(https://formbricks.com/docs/self-hosting/configuration/smtp)
-- 'PASSWORD_RESET_DISABLED': 1 # By Default password reset is disabled, configure SMTP settings to enable(https://formbricks.com/docs/self-hosting/configuration/smtp)
+- 'EMAIL_VERIFICATION_DISABLED': 1 # By Default email verification is disabled, configure SMTP settings to enable(https://merdekasurvey.com/docs/self-hosting/configuration/smtp)
+- 'PASSWORD_RESET_DISABLED': 1 # By Default password reset is disabled, configure SMTP settings to enable(https://merdekasurvey.com/docs/self-hosting/configuration/smtp)
 
 Retrieve them using:
 ```sh
@@ -153,8 +153,8 @@ Persistence:
 Formbricks Documentation and Support:
 
 For more information, advanced configurations, and support, visit:
-- **Official Website**: https://formbricks.com
-- **Documentation**: https://formbricks.com/docs
+- **Official Website**: https://merdekasurvey.com
+- **Documentation**: https://merdekasurvey.com/docs
 
 For troubleshooting, refer to the documentation or community support.
 
