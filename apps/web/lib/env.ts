@@ -1,4 +1,5 @@
 import { createEnv } from "@t3-oss/env-nextjs";
+import { Z } from "vitest/dist/chunks/reporters.d.DG9VKi4m.js";
 import { z } from "zod";
 
 export const env = createEnv({
@@ -71,6 +72,7 @@ export const env = createEnv({
     S3_SECRET_KEY: z.string().optional(),
     S3_ENDPOINT_URL: z.string().optional(),
     S3_FORCE_PATH_STYLE: z.enum(["1", "0"]).optional(),
+    PUBLIC_STORAGE_URL: z.string().optional(),
     SAML_DATABASE_URL: z.string().optional(),
     SENTRY_DSN: z.string().optional(),
     SLACK_CLIENT_ID: z.string().optional(),
@@ -188,6 +190,7 @@ export const env = createEnv({
     S3_SECRET_KEY: process.env.S3_SECRET_KEY,
     S3_ENDPOINT_URL: process.env.S3_ENDPOINT_URL,
     S3_FORCE_PATH_STYLE: process.env.S3_FORCE_PATH_STYLE,
+    PUBLIC_STORAGE_URL: process.env.PUBLIC_STORAGE_URL,
     SAML_DATABASE_URL: process.env.SAML_DATABASE_URL,
     SLACK_CLIENT_ID: process.env.SLACK_CLIENT_ID,
     SLACK_CLIENT_SECRET: process.env.SLACK_CLIENT_SECRET,

@@ -10,8 +10,7 @@ import {
 } from "@formbricks/storage";
 import { Result, err, ok } from "@formbricks/types/error-handlers";
 import { TAccessType } from "@formbricks/types/storage";
-import { WEBAPP_URL } from "@/lib/constants";
-import { getPublicDomain } from "@/lib/getPublicUrl";
+import { getPublicStorageUrl } from "@/lib/getPublicUrl";
 import { sanitizeFileName } from "./utils";
 
 export const getSignedUrlForUpload = async (
@@ -52,14 +51,14 @@ export const getSignedUrlForUpload = async (
     }
 
     // Use PUBLIC_URL for public files, WEBAPP_URL for private files
-    const baseUrl = accessType === "public" ? getPublicDomain() : WEBAPP_URL;
+    // const baseUrl = accessType === "public" ? getPublicDomain() : WEBAPP_URL;
+    const storageUrl = getPublicStorageUrl();
 
     return ok({
       signedUrl: signedUrlResult.data.signedUrl,
       presignedFields: signedUrlResult.data.presignedFields,
-      fileUrl: new URL(
-        `${baseUrl}/storage/${environmentId}/${accessType}/${encodeURIComponent(updatedFileName)}`
-      ).href,
+      fileUrl: new URL(`${storageUrl}/${environmentId}/${accessType}/${encodeURIComponent(updatedFileName)}`)
+        .href,
     });
   } catch (error) {
     logger.error({ error }, "Error getting signed url for upload");

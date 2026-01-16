@@ -11,3 +11,7 @@ const WEBAPP_URL =
 export const getPublicDomain = (): string => {
   return env.PUBLIC_URL && env.PUBLIC_URL.trim() !== "" ? env.PUBLIC_URL : WEBAPP_URL;
 };
+
+export const getPublicStorageUrl = (): string => {
+  return env.PUBLIC_STORAGE_URL && env.PUBLIC_STORAGE_URL.trim() !== "" ? env.PUBLIC_STORAGE_URL : WEBAPP_URL;
+};
